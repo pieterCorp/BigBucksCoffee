@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BigBucksCoffee
 {
-    internal class Soda : Beverages
+    internal class Soda : Beverage
     {
         public string Extras { get; set; }
         public bool WithSugar { get; set; }

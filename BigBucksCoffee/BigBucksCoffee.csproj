@@ -46,28 +46,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Smoothie\Banana.cs" />
-    <Compile Include="Beers\Beer.cs" />
-    <Compile Include="Beverages.cs" />
-    <Compile Include="Soda\CocaCola.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Beverages\BeverageRepo.cs" />
+    <Compile Include="Forms\DynamicControls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\DynamicControls.Designer.cs">
+      <DependentUpon>DynamicControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IBeverage.cs" />
+    <Compile Include="Interfaces\IBeverageRepo.cs" />
+    <Compile Include="UserControls\UserControlSmoothie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlSmoothie.Designer.cs">
+      <DependentUpon>UserControlSmoothie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlSoda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlSoda.Designer.cs">
+      <DependentUpon>UserControlSoda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlBeer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlBeer.Designer.cs">
+      <DependentUpon>UserControlBeer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MyUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MyUserControl.Designer.cs">
+      <DependentUpon>MyUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Beverages\Smoothie\Banana.cs" />
+    <Compile Include="Beverages\Beer\Beer.cs" />
+    <Compile Include="Beverages\Beverage.cs" />
+    <Compile Include="Beverages\Soda\CocaCola.cs" />
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soda\IceTea.cs" />
-    <Compile Include="Soda\Soda.cs" />
-    <Compile Include="Beers\Jupiler.cs" />
-    <Compile Include="Beers\Orval.cs" />
+    <Compile Include="Beverages\Soda\IceTea.cs" />
+    <Compile Include="Beverages\Soda\Soda.cs" />
+    <Compile Include="Beverages\Beer\Jupiler.cs" />
+    <Compile Include="Beverages\Beer\Orval.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Smoothie\Smoothie.cs" />
-    <Compile Include="Beers\Stella.cs" />
-    <Compile Include="Beers\Vedett.cs" />
-    <Compile Include="Smoothie\Strawberry.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <Compile Include="Beverages\Smoothie\Smoothie.cs" />
+    <Compile Include="Beverages\Beer\Stella.cs" />
+    <Compile Include="Beverages\Beer\Vedett.cs" />
+    <Compile Include="Beverages\Smoothie\Strawberry.cs" />
+    <EmbeddedResource Include="Forms\DynamicControls.resx">
+      <DependentUpon>DynamicControls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MyUserControl.resx">
+      <DependentUpon>MyUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +117,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\UserControlBeer.resx">
+      <DependentUpon>UserControlBeer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -92,5 +134,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\Beverages\key.jpeg" />
+    <Content Include="Images\Beverages\santa.jpg" />
+    <Content Include="Images\Beverages\simp.jpg" />
+    <Content Include="Images\bg.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

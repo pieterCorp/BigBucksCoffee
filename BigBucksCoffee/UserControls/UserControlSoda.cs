@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BigBucksCoffee
 {
-    public partial class Form1 : Form
+    public partial class UserControlSoda : MyUserControl
     {
-        public Form1()
+        public UserControlSoda()
         {
             InitializeComponent();
         }
