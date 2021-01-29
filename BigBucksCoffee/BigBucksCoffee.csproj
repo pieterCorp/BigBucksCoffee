@@ -54,8 +54,10 @@
     <Compile Include="Forms\DynamicControls.Designer.cs">
       <DependentUpon>DynamicControls.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ICart.cs" />
     <Compile Include="Interfaces\IBeverage.cs" />
     <Compile Include="Interfaces\IBeverageRepo.cs" />
+    <Compile Include="ItemInCart.cs" />
     <Compile Include="UserControls\UserControlCart.cs">
       <SubType>UserControl</SubType>
     </Compile>

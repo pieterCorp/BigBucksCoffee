@@ -4,8 +4,8 @@ namespace BigBucksCoffee
 {
     public partial class UserControlSmoothie : MyUserControl
     {
-        public UserControlSmoothie(UserControlCart cartControl)
-            : base(cartControl)
+        public UserControlSmoothie()
+
         {
             InitializeComponent();
         }
@@ -16,7 +16,7 @@ namespace BigBucksCoffee
             set { cboxExtraFruit.Checked = value; }
         }
 
-        public int Size
+        public int BeverageSize
         {
             get { return Convert.ToInt32(lblSize.Text); }
             set { lblSize.Text = Convert.ToString(value); }
