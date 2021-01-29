@@ -12,20 +12,18 @@ namespace BigBucksCoffee
 {
     public partial class MyUserControl : UserControl
     {
-        private UserControlCart _cartControl;
-
-        public MyUserControl(UserControlCart cartControl)
-        {
-            InitializeComponent();
-            _cartControl = cartControl;
-        }
-
         public MyUserControl()
         {
             InitializeComponent();
         }
 
         public int BeverageID { get; set; }
+
+        public int Amount
+        {
+            get { return (int)numericUpDown1.Value; }
+            set { numericUpDown1.Value = value; }
+        }
 
         public string BeverageName
         {
@@ -59,10 +57,16 @@ namespace BigBucksCoffee
             }
         }
 
+        public event EventHandler ButtonOrderClicked;
+
+        protected virtual void OnButtonOrderClicked(EventArgs e)
+        {
+            ButtonOrderClicked?.Invoke(this, e);
+        }
+
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            _cartControl.Cart.AddToCart(BeverageID, Convert.ToInt32(numericUpDown1.Value));
-            _cartControl.SetCart();
+            OnButtonOrderClicked(e);
         }
     }
 }

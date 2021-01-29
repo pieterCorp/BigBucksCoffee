@@ -4,8 +4,8 @@ namespace BigBucksCoffee
 {
     public partial class UserControlBeer : MyUserControl
     {
-        public UserControlBeer(UserControlCart cartControl)
-            : base(cartControl)
+        public UserControlBeer()
+
         {
             InitializeComponent();
         }

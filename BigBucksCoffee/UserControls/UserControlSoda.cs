@@ -2,8 +2,8 @@
 {
     public partial class UserControlSoda : MyUserControl
     {
-        public UserControlSoda(UserControlCart cartControl)
-            : base(cartControl)
+        public UserControlSoda()
+
         {
             InitializeComponent();
         }
