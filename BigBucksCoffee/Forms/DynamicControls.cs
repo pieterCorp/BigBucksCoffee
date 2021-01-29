@@ -14,15 +14,19 @@ namespace BigBucksCoffee
 
         public DynamicControls()
         {
+            //compositie: dit object heeft die klasse nodig, instanties gemaakt
             InitializeComponent();
             beverageRepo = new BeverageRepo();
             _cart = Cart.GetCart();
+
+            //beverages ophalen en controls genereren
             var beverages = beverageRepo.GetBeverages();
             GenerateControlsForBeverages(beverages);
             ShowCart();
         }
 
         private void ShowCart()
+            //plakken van element: 
         {
             flowLayoutPanel2.Controls.Add(_cartControl);
         }
@@ -35,10 +39,14 @@ namespace BigBucksCoffee
 
         private void ButtonAddToCartInUserControlWasClicked(object sender, EventArgs e)
         {
+            //listener: als onderstaande methode uitgevoerd wordt, (buttonaddtocartclickedinusercontrol) voer deze code uit
+            //dus uitgevoerd elke keer als button add to cart geklikt wordt in een van z'n children, wordt deze code uitgevoerd
             var myControl = sender as MyUserControl;
             AddToCart(myControl.BeverageID, myControl.Amount);
         }
 
+
+        //evt: inkorten code
         private void GenerateControlsForBeverages(IEnumerable<IBeverage> beverages)
         {
             foreach (IBeverage beverage in beverages)
@@ -57,6 +65,7 @@ namespace BigBucksCoffee
                         IsTrapist = beer.IsTrapist,
                         Type = beer.Type
                     };
+                    //listener wordt uitgevoerd wanneer dat een buttonorderclicked in usercontrolbeer wordt aangevinkt
                     UserControlBeer.ButtonOrderClicked += ButtonAddToCartInUserControlWasClicked;
                     flowLayoutPanel1.Controls.Add(UserControlBeer);
                 }
@@ -107,6 +116,7 @@ namespace BigBucksCoffee
 
                     myUserControl.ButtonOrderClicked += ButtonAddToCartInUserControlWasClicked;
 
+                    //op einde allemaal mooi aan panel toevoegen
                     flowLayoutPanel1.Controls.Add(myUserControl);
                 }
             }

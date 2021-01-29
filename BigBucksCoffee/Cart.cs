@@ -10,6 +10,8 @@ namespace BigBucksCoffee
     {
         private static Cart _cart;
         private IBeverageRepo _repo;
+        //constructor private gemaakt, externe klasse kan geen nieuwe maken^
+
         public List<ItemInCart> ItemsInCart;
         public int ItemCount { get; set; }
         public double TotalPrice { get; set; }
@@ -21,6 +23,7 @@ namespace BigBucksCoffee
             ItemsInCart = new List<ItemInCart>();
         }
 
+        //we verbieden anderen om een cart aan te maken, maar ze mogen er wel om vragen
         public static Cart GetCart()
         {
             if (_cart == null)
