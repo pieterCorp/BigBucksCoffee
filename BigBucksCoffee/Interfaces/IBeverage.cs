@@ -1,6 +1,6 @@
 ﻿namespace BigBucksCoffee
 {
-    internal interface IBeverage
+    public interface IBeverage
     {
         int ID { get; set; }
         string Name { get; set; }

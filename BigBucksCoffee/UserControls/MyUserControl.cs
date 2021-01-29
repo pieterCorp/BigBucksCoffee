@@ -12,12 +12,17 @@ namespace BigBucksCoffee
 {
     public partial class MyUserControl : UserControl
     {
-        //private IBeverageRepo _repo;
+        private UserControlCart _cartControl;
+
+        public MyUserControl(UserControlCart cartControl)
+        {
+            InitializeComponent();
+            _cartControl = cartControl;
+        }
 
         public MyUserControl()
         {
             InitializeComponent();
-            //_repo = new BeverageRepo();
         }
 
         public int BeverageID { get; set; }
@@ -30,8 +35,8 @@ namespace BigBucksCoffee
 
         public string Description
         {
-            get { return lblPrice.Text; }
-            set { lblPrice.Text = value; }
+            get { return lblDescription.Text; }
+            set { lblDescription.Text = value; }
         }
 
         public string Price
@@ -50,9 +55,14 @@ namespace BigBucksCoffee
                 {
                     _image = value;
                     pictureBox1.ImageLocation = _image;
-                    //pictureBox1.Load(_image);
                 }
             }
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            _cartControl.Cart.AddToCart(BeverageID, Convert.ToInt32(numericUpDown1.Value));
+            _cartControl.SetCart();
         }
     }
 }

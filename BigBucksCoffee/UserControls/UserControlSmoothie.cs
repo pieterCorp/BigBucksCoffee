@@ -1,20 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace BigBucksCoffee
 {
     public partial class UserControlSmoothie : MyUserControl
     {
-        public UserControlSmoothie()
+        public UserControlSmoothie(UserControlCart cartControl)
+            : base(cartControl)
         {
             InitializeComponent();
+        }
+
+        public bool ExtraFruits
+        {
+            get { return cboxExtraFruit.Checked; }
+            set { cboxExtraFruit.Checked = value; }
+        }
+
+        public int Size
+        {
+            get { return Convert.ToInt32(lblSize.Text); }
+            set { lblSize.Text = Convert.ToString(value); }
         }
     }
 }

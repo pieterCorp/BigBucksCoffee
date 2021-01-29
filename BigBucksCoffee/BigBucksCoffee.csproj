@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Beverages\BeverageRepo.cs" />
+    <Compile Include="Cart.cs" />
     <Compile Include="Forms\DynamicControls.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +56,12 @@
     </Compile>
     <Compile Include="Interfaces\IBeverage.cs" />
     <Compile Include="Interfaces\IBeverageRepo.cs" />
+    <Compile Include="UserControls\UserControlCart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlCart.Designer.cs">
+      <DependentUpon>UserControlCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlSmoothie.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,6 +112,9 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlCart.resx">
+      <DependentUpon>UserControlCart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MyUserControl.resx">
       <DependentUpon>MyUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +129,12 @@
     </Compile>
     <EmbeddedResource Include="UserControls\UserControlBeer.resx">
       <DependentUpon>UserControlBeer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlSmoothie.resx">
+      <DependentUpon>UserControlSmoothie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlSoda.resx">
+      <DependentUpon>UserControlSoda.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

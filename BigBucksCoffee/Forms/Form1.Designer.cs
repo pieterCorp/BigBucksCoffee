@@ -36,9 +36,9 @@ namespace BigBucksCoffee
             // 
             // btnShowBaverages
             // 
-            this.btnShowBaverages.Location = new System.Drawing.Point(30, 317);
+            this.btnShowBaverages.Location = new System.Drawing.Point(12, 249);
             this.btnShowBaverages.Name = "btnShowBaverages";
-            this.btnShowBaverages.Size = new System.Drawing.Size(718, 153);
+            this.btnShowBaverages.Size = new System.Drawing.Size(900, 153);
             this.btnShowBaverages.TabIndex = 3;
             this.btnShowBaverages.Text = "Show beverages";
             this.btnShowBaverages.UseVisualStyleBackColor = true;
@@ -49,7 +49,7 @@ namespace BigBucksCoffee
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 511);
+            this.ClientSize = new System.Drawing.Size(924, 638);
             this.Controls.Add(this.btnShowBaverages);
             this.Name = "Form1";
             this.Text = "Form1";

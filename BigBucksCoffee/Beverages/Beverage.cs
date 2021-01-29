@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BigBucksCoffee
 {
-    internal abstract class Beverage : IBeverage
+    public abstract class Beverage : IBeverage
     {
         public int ID { get; set; }
         public string Name { get; set; }

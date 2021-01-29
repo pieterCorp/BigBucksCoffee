@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace BigBucksCoffee
+﻿namespace BigBucksCoffee
 {
     public partial class UserControlSoda : MyUserControl
     {
-        public UserControlSoda()
+        public UserControlSoda(UserControlCart cartControl)
+            : base(cartControl)
         {
             InitializeComponent();
+        }
+
+        public bool WithSugar
+        {
+            get { return cboxWithSugar.Checked; }
+            set { cboxWithSugar.Checked = value; }
+        }
+
+        public string Extras
+        {
+            get { return lblExtras.Text; }
+            set { lblExtras.Text = value; }
         }
     }
 }
