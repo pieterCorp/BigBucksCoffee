@@ -149,7 +149,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Images\Beverages\key.jpeg" />
     <Content Include="Images\Beverages\santa.jpg" />

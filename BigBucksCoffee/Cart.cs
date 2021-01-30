@@ -33,7 +33,7 @@ namespace BigBucksCoffee
             ItemInfo.Add(Convert.ToString(beverage.Price * amount));
         }
 
-        private double CalcBtw(double price)
+        public double CalcBtw(double price)
         {
             return price * 1.21;
         }
