@@ -36,12 +36,13 @@ namespace BigBucksCoffee
             // cboxWithSugar
             // 
             this.cboxWithSugar.AutoSize = true;
-            this.cboxWithSugar.Location = new System.Drawing.Point(132, 252);
+            this.cboxWithSugar.BackColor = System.Drawing.Color.Transparent;
+            this.cboxWithSugar.Location = new System.Drawing.Point(132, 248);
             this.cboxWithSugar.Name = "cboxWithSugar";
             this.cboxWithSugar.Size = new System.Drawing.Size(79, 17);
             this.cboxWithSugar.TabIndex = 3;
             this.cboxWithSugar.Text = "Whit Sugar";
-            this.cboxWithSugar.UseVisualStyleBackColor = true;
+            this.cboxWithSugar.UseVisualStyleBackColor = false;
             // 
             // lblExtras
             // 

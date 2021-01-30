@@ -18,7 +18,9 @@ namespace BigBucksCoffee
                 new Soda(3, "Soda", "Description", 10, $"{PATH}key.jpeg", "extra's", false ),
                 new Soda(4, "Coco", "Description", 12, $"{PATH}key.jpeg", "extra's", false ),
                 new Smoothie(5, "smoothie", "Description", 20, $"{PATH}santa.jpg", false ,20),
-                new Smoothie(6, "smooth", "Description", 30, $"{PATH}simp.jpg", true ,50)
+                new Smoothie(6, "smooth", "Description", 30, $"{PATH}simp.jpg", true ,50),
+                new Smoothie(7, "with", "Description", 35, $"{PATH}key.jpeg", false ,50),
+                new Jupiler(1, "santa", "Description", 20, $"{PATH}santa.jpg", 5, true, "blond")
             };
 
             return beverages;

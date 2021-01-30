@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace BigBucksCoffee
@@ -9,20 +10,43 @@ namespace BigBucksCoffee
 
         private UserControlCart _cartControl = new UserControlCart();
 
+        private ICart _cart;
+
         public DynamicControls()
         {
+            //compositie: dit object heeft die klasse nodig, instanties gemaakt
             InitializeComponent();
             beverageRepo = new BeverageRepo();
+            _cart = Cart.GetCart();
+
+            //beverages ophalen en controls genereren
             var beverages = beverageRepo.GetBeverages();
             GenerateControlsForBeverages(beverages);
             ShowCart();
         }
 
         private void ShowCart()
+            //plakken van element: 
         {
             flowLayoutPanel2.Controls.Add(_cartControl);
         }
 
+        private void AddToCart(int beverageId, int amount)
+        {
+            _cart.AddToCart(beverageId, amount);
+            _cartControl.PrintOrders();
+        }
+
+        private void ButtonAddToCartInUserControlWasClicked(object sender, EventArgs e)
+        {
+            //listener: als onderstaande methode uitgevoerd wordt, (buttonaddtocartclickedinusercontrol) voer deze code uit
+            //dus uitgevoerd elke keer als button add to cart geklikt wordt in een van z'n children, wordt deze code uitgevoerd
+            var myControl = sender as MyUserControl;
+            AddToCart(myControl.BeverageID, myControl.Amount);
+        }
+
+
+        //evt: inkorten code
         private void GenerateControlsForBeverages(IEnumerable<IBeverage> beverages)
         {
             foreach (IBeverage beverage in beverages)
@@ -30,7 +54,7 @@ namespace BigBucksCoffee
                 if (beverage is Beer)
                 {
                     Beer beer = beverage as Beer;
-                    UserControlBeer UserControlBeer = new UserControlBeer(_cartControl)
+                    UserControlBeer UserControlBeer = new UserControlBeer()
                     {
                         BeverageID = beverage.ID,
                         BeverageName = beverage.Name,
@@ -41,12 +65,14 @@ namespace BigBucksCoffee
                         IsTrapist = beer.IsTrapist,
                         Type = beer.Type
                     };
+                    //listener wordt uitgevoerd wanneer dat een buttonorderclicked in usercontrolbeer wordt aangevinkt
+                    UserControlBeer.ButtonOrderClicked += ButtonAddToCartInUserControlWasClicked;
                     flowLayoutPanel1.Controls.Add(UserControlBeer);
                 }
                 else if (beverage is Soda)
                 {
                     Soda soda = beverage as Soda;
-                    UserControlSoda UserControlSoda = new UserControlSoda(_cartControl)
+                    UserControlSoda UserControlSoda = new UserControlSoda()
                     {
                         BeverageID = beverage.ID,
                         BeverageName = beverage.Name,
@@ -56,12 +82,14 @@ namespace BigBucksCoffee
                         Extras = soda.Extras,
                         WithSugar = soda.WithSugar
                     };
+                    UserControlSoda.ButtonOrderClicked += ButtonAddToCartInUserControlWasClicked;
+
                     flowLayoutPanel1.Controls.Add(UserControlSoda);
                 }
                 else if (beverage is Smoothie)
                 {
                     Smoothie smoothie = beverage as Smoothie;
-                    UserControlSmoothie UserControlSmoothie = new UserControlSmoothie(_cartControl)
+                    UserControlSmoothie UserControlSmoothie = new UserControlSmoothie()
                     {
                         BeverageID = beverage.ID,
                         BeverageName = beverage.Name,
@@ -69,21 +97,26 @@ namespace BigBucksCoffee
                         Price = beverage.Price.ToString(),
                         Image = beverage.Image,
                         ExtraFruits = smoothie.ExtraFruits,
-                        Size = smoothie.Size
+                        BeverageSize = smoothie.Size
                     };
+                    UserControlSmoothie.ButtonOrderClicked += ButtonAddToCartInUserControlWasClicked;
+
                     flowLayoutPanel1.Controls.Add(UserControlSmoothie);
                 }
                 else
                 {
-                    MyUserControl myUserControl = new MyUserControl(_cartControl)
+                    MyUserControl myUserControl = new MyUserControl()
                     {
                         BeverageID = beverage.ID,
                         BeverageName = beverage.Name,
                         Description = beverage.Discription,
                         Price = beverage.Price.ToString(),
-                        Image = beverage.Image
+                        Image = beverage.Image,
                     };
 
+                    myUserControl.ButtonOrderClicked += ButtonAddToCartInUserControlWasClicked;
+
+                    //op einde allemaal mooi aan panel toevoegen
                     flowLayoutPanel1.Controls.Add(myUserControl);
                 }
             }

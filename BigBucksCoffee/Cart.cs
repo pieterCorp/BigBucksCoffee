@@ -6,18 +6,31 @@ using System.Threading.Tasks;
 
 namespace BigBucksCoffee
 {
-    public class Cart
+    public class Cart : ICart
     {
+        private static Cart _cart;
         private IBeverageRepo _repo;
-        public List<string> ItemInfo;
+        //constructor private gemaakt, externe klasse kan geen nieuwe maken^
+
+        public List<ItemInCart> ItemsInCart;
         public int ItemCount { get; set; }
         public double TotalPrice { get; set; }
         public double TotalPriceIncBtw { get; set; }
 
-        public Cart()
+        private Cart()
         {
             _repo = new BeverageRepo();
-            ItemInfo = new List<string>();
+            ItemsInCart = new List<ItemInCart>();
+        }
+
+        //we verbieden anderen om een cart aan te maken, maar ze mogen er wel om vragen
+        public static Cart GetCart()
+        {
+            if (_cart == null)
+            {
+                _cart = new Cart();
+            }
+            return _cart;
         }
 
         public void AddToCart(int id, int amount)
@@ -26,11 +39,16 @@ namespace BigBucksCoffee
             ItemCount += amount;
             TotalPrice += amount * beverage.Price;
             TotalPriceIncBtw = CalcBtw(TotalPrice);
-            ItemInfo.Clear();
-            ItemInfo.Add(beverage.Name);
-            ItemInfo.Add(Convert.ToString(amount));
-            ItemInfo.Add(Convert.ToString(beverage.Price));
-            ItemInfo.Add(Convert.ToString(beverage.Price * amount));
+
+            var item = new ItemInCart
+            {
+                Name = beverage.Name,
+                Amount = amount,
+                SinglePrice = beverage.Price,
+                TotalPrice = beverage.Price * amount
+            };
+
+            ItemsInCart.Add(item);
         }
 
         public double CalcBtw(double price)

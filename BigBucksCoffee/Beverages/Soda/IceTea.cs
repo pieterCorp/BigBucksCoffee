@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace BigBucksCoffee
 {
-    class IceTea : Soda
+    internal class IceTea : Soda
     {
-        public IceTea(int id, string name, string discription, double price, string img, string extras, bool withSugar)
+        public bool WithLemon { get; set; }
+
+        public IceTea(int id, string name, string discription, double price, string img, string extras, bool withSugar, bool withLemon)
           : base(id, name, discription, price, img, extras, withSugar)
         {
-
+            WithLemon = withLemon;
         }
     }
 }

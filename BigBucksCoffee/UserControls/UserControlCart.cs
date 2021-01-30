@@ -17,20 +17,35 @@ namespace BigBucksCoffee
         public UserControlCart()
         {
             InitializeComponent();
-            Cart = new Cart();
+            Cart = Cart.GetCart();
         }
 
-        public void SetCart()
+        public void PrintOrders()
+        {
+            SetCart();
+            AddOrdersToListView(Cart.ItemsInCart);
+        }
+
+        private void SetCart()
         {
             lblItemCount.Text = Convert.ToString(Cart.ItemCount);
             lblTotalPrice.Text = Convert.ToString(Cart.TotalPrice);
             lblPriceIncBtw.Text = Convert.ToString(Cart.TotalPriceIncBtw);
+        }
 
-            ListViewItem item = new ListViewItem(Cart.ItemInfo[0]);
-            item.SubItems.Add(Convert.ToString(Cart.ItemInfo[1]));
-            item.SubItems.Add(Convert.ToString(Cart.ItemInfo[2]));
-            item.SubItems.Add(Convert.ToString(Cart.ItemInfo[3]));
-            lstShowItems.Items.Add(item);
+        private void AddOrdersToListView(IEnumerable<ItemInCart> itemsInCart)
+        {
+            lstShowItems.Items.Clear();
+            foreach (var itemInCart in itemsInCart)
+            {
+                ListViewItem item = new ListViewItem(itemInCart.Name);
+
+                //item.SubItems.Add(itemInCart.Name);
+                item.SubItems.Add(itemInCart.Amount.ToString());
+                item.SubItems.Add(itemInCart.SinglePrice.ToString());
+                item.SubItems.Add(itemInCart.TotalPrice.ToString());
+                lstShowItems.Items.Add(item);
+            }
         }
     }
 }
