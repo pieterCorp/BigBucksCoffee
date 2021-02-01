@@ -162,19 +162,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Beverages\banana.jfif" />
-    <Content Include="Images\Beverages\beer.jpg" />
+    <Content Include="Images\Beverages\Banana.jfif" />
+    <Content Include="Images\Beverages\Beer.jpg" />
     <Content Include="Images\Beverages\Cola.jfif" />
+    <Content Include="Images\Beverages\Fanta.jpg" />
     <Content Include="Images\Beverages\Hoegaarden.jpg" />
     <Content Include="Images\Beverages\Ice-Tea.jfif" />
-    <Content Include="Images\Beverages\key.jpeg" />
+    <Content Include="Images\Beverages\Jupiler.jfif" />
+    <Content Include="Images\Beverages\Key.jpeg" />
     <Content Include="Images\Beverages\Orval.jfif" />
-    <Content Include="Images\Beverages\santa.jpg" />
-    <Content Include="Images\Beverages\simp.jpg" />
-    <Content Include="Images\Beverages\smoothie.jfif" />
+    <Content Include="Images\Beverages\Santa.jpg" />
+    <Content Include="Images\Beverages\Simp.jpg" />
+    <Content Include="Images\Beverages\Smoothie.jfif" />
+    <Content Include="Images\Beverages\Soda.jpg" />
     <Content Include="Images\Beverages\Stella.jfif" />
-    <Content Include="Images\Beverages\strawberry.jfif" />
-    <Content Include="Images\Beverages\tropical.jpg" />
+    <Content Include="Images\Beverages\Strawberry.jfif" />
+    <Content Include="Images\Beverages\Tropical.jpg" />
     <Content Include="Images\Beverages\Vedett.jfif" />
     <Content Include="Images\bg.jpg" />
   </ItemGroup>

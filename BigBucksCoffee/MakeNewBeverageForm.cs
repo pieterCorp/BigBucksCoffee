@@ -19,7 +19,7 @@ namespace BigBucksCoffee
         {
             InitializeComponent();
             makeNewBeverage = new MakeNewBeverage();
-            makeNewBeverage.MakeNewBeer(10, "Stella", "Description", 20, $"{PATH}Stella.jfif", 5, true, "blond");
+            //makeNewBeverage.MakeNewBeer(10, "Stella", "Description", 20, $"{PATH}Stella.jfif", 5, true, "blond");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace BigBucksCoffee
             label5.Visible = false;
             label6.Visible = false;
             label7.Visible = false;
-            checkBoxExtras.Visible = false;
+            txtExtras.Visible = false;
             checkBoxWithSugar.Visible = false;
             label10.Visible = false;
             label11.Visible = false;
@@ -41,7 +41,7 @@ namespace BigBucksCoffee
 
             if (comboBox1.Text == "Beer")
             {
-                makeNewBeverage.MakeNewBeer(1, txtName.Text, txtDescription.Text, (double)nmbrPrice.Value, txtImage.Text, (int)nmbrAlcoholpercentage.Value, checkBoxTrapist.Checked, txtType.Text );
+                //makeNewBeverage.MakeNewBeer(1, txtName.Text, txtDescription.Text, (double)nmbrPrice.Value, txtImage.Text, (int)nmbrAlcoholpercentage.Value, checkBoxTrapist.Checked, txtType.Text);
                 nmbrAlcoholpercentage.Visible = true;
                 checkBoxTrapist.Visible = true;
                 txtType.Visible = true;
@@ -52,15 +52,13 @@ namespace BigBucksCoffee
             }
             else if (comboBox1.Text == "Soda")
             {
-                makeNewBeverage.MakeNewSoda();
-                checkBoxExtras.Visible = true;
+                txtExtras.Visible = true;
                 checkBoxWithSugar.Visible = true;
                 label10.Visible = true;
                 label11.Visible = true;
             }
             else if (comboBox1.Text == "Smoothie")
             {
-                makeNewBeverage.MakeNewSmoothie();
                 checkBoxExtraFruits.Visible = true;
                 nmbrSize.Visible = true;
                 label8.Visible = true;
@@ -70,5 +68,45 @@ namespace BigBucksCoffee
 
         }
 
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            AddBeverage();
+            ClearFields();
+        }
+
+        private void AddBeverage()
+        {
+            //makeNewBeverage = new MakeNewBeverage();
+
+            if (comboBox1.Text == "Beer")
+            {
+                makeNewBeverage.MakeNewBeer(1, txtName.Text, txtDescription.Text, (double)nmbrPrice.Value, txtImage.Text, (int)nmbrAlcoholpercentage.Value, checkBoxTrapist.Checked, txtType.Text);
+            }
+            else if (comboBox1.Text == "Soda")
+            {
+                makeNewBeverage.MakeNewSoda(2, txtName.Text, txtDescription.Text, (double)nmbrPrice.Value, txtImage.Text, txtExtras.Text, checkBoxWithSugar.Checked);
+            }
+            else if (comboBox1.Text == "Smoothie")
+            {
+                makeNewBeverage.MakeNewSmoothie(3, txtName.Text, txtDescription.Text, (double)nmbrPrice.Value, txtImage.Text, checkBoxExtraFruits.Checked, (int)nmbrSize.Value);
+            }
+
+        }
+
+        private void ClearFields()
+        {
+            txtName.Text = "";
+            txtDescription.Text = "";
+            nmbrPrice.Value = 0;
+            txtImage.Text = "";
+            nmbrAlcoholpercentage.Value = 0;
+            checkBoxTrapist.Checked = false;
+            txtType.Text = "";
+            txtExtras.Text = "";
+            checkBoxWithSugar.Checked = false;
+            checkBoxExtraFruits.Checked = false;
+            nmbrSize.Value = 0;
+        }
+    
     }
 }

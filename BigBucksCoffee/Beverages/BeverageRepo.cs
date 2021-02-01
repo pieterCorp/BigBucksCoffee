@@ -42,16 +42,14 @@ namespace BigBucksCoffee
 
             var beverages = new List<IBeverage>
             {
-                new Stella(1, "santa", "Description", 20, $"{PATH}santa.jpg", 5, true, "blond"),
-                new Orval(2, "simp", "Description", 15, $"{PATH}simp.jpg", 5, false, "bruin"),
-                new Soda(3, "Soda", "Description", 10, $"{PATH}key.jpeg", "extra's", false ),
-                new Soda(4, "Coco", "Description", 12, $"{PATH}key.jpeg", "extra's", false ),
-                new Smoothie(5, "smoothie", "Description", 20, $"{PATH}santa.jpg", false ,20),
-                new Smoothie(6, "smooth", "Description", 30, $"{PATH}simp.jpg", true ,50),
-                new Smoothie(7, "with", "Description", 35, $"{PATH}key.jpeg", false ,50),
-                new Jupiler(1, "santa", "Description", 20, $"{PATH}santa.jpg", 5, true, "blond"),
-                new Orval(1, "santa", "Description", 20, $"{PATH}Orval.jfif", 5, true, "blond")
-
+                
+                new Orval(1, "Orval", "Pieter heeft er zin in", 4, $"{PATH}Orval.jfif", 6, false, "bruin"),
+                new Jupiler(2, "Jupiler", "als er geen Stella is", 2, $"{PATH}Jupiler.jfif", 5, false, "pils"),
+                new Stella(3, "Stella aka godendrank", "beter dan water", 2, $"{PATH}Stella.jfif", 5, false, "pils"),
+                new CocaCola(4, "Cola", "geen pepsi", 3, $"{PATH}Cola.jfif", "citroentje", true),
+                new IceTea(5, "Ice-Tea", "voor alsde nen kater hebt en nog niet wilt drinken maar beter dan water", 3, $"{PATH}Ice-Tea.jfif", "citroentje én appelsientje", true, true),
+                new Banana(6, "banana smoothie", "melk en banaan, met beetje yoghurt, gemixt", 4, $"{PATH}Banana.jfif", true, 10),
+                new Strawberry(7, "strawberry smoothie", "aardbei en melk en yoghurt en mixen", 5, $"{PATH}Strawberry.jfif", true, 20),
             };
 
             return beverages;

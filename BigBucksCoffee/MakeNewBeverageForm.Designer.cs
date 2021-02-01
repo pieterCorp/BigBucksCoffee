@@ -49,9 +49,10 @@ namespace BigBucksCoffee
             this.label9 = new System.Windows.Forms.Label();
             this.nmbrSize = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.checkBoxExtras = new System.Windows.Forms.CheckBox();
             this.checkBoxWithSugar = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.txtExtras = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nmbrPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmbrAlcoholpercentage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmbrSize)).BeginInit();
@@ -238,16 +239,6 @@ namespace BigBucksCoffee
             this.label10.Text = "Extra\'s?";
             this.label10.Visible = false;
             // 
-            // checkBoxExtras
-            // 
-            this.checkBoxExtras.AutoSize = true;
-            this.checkBoxExtras.Location = new System.Drawing.Point(488, 266);
-            this.checkBoxExtras.Name = "checkBoxExtras";
-            this.checkBoxExtras.Size = new System.Drawing.Size(18, 17);
-            this.checkBoxExtras.TabIndex = 20;
-            this.checkBoxExtras.UseVisualStyleBackColor = true;
-            this.checkBoxExtras.Visible = false;
-            // 
             // checkBoxWithSugar
             // 
             this.checkBoxWithSugar.AutoSize = true;
@@ -268,14 +259,33 @@ namespace BigBucksCoffee
             this.label11.Text = "With sugar?";
             this.label11.Visible = false;
             // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(114, 377);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(337, 40);
+            this.btnCreate.TabIndex = 23;
+            this.btnCreate.Text = "Add product";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // txtExtras
+            // 
+            this.txtExtras.Location = new System.Drawing.Point(457, 263);
+            this.txtExtras.Name = "txtExtras";
+            this.txtExtras.Size = new System.Drawing.Size(100, 22);
+            this.txtExtras.TabIndex = 24;
+            this.txtExtras.Visible = false;
+            // 
             // MakeNewBeverageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtExtras);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.checkBoxWithSugar);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.checkBoxExtras);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.nmbrSize);
             this.Controls.Add(this.label9);
@@ -328,8 +338,9 @@ namespace BigBucksCoffee
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown nmbrSize;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.CheckBox checkBoxExtras;
         private System.Windows.Forms.CheckBox checkBoxWithSugar;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.TextBox txtExtras;
     }
 }
