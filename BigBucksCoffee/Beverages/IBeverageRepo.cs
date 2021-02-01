@@ -4,8 +4,8 @@ namespace BigBucksCoffee
 {
     internal interface IBeverageRepo
     {
-        List<IBeverage> GetBeverages();
-
+        void AddBeverage(IBeverage beverage);
         IBeverage GetBeverage(int id);
+        IList<IBeverage> GetBeverages();
     }
 }

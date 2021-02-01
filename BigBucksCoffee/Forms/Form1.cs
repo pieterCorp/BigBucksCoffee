@@ -24,5 +24,11 @@ namespace BigBucksCoffee
             DynamicControls controls = new DynamicControls();
             controls.Show();
         }
+
+        private void btnAddNewBeverage_Click(object sender, EventArgs e)
+        {
+            MakeNewBeverageForm makeNewBeverageForm = new MakeNewBeverageForm();
+            makeNewBeverageForm.Show();
+        }
     }
 }

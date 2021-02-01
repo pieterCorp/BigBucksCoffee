@@ -32,25 +32,39 @@ namespace BigBucksCoffee
         private void InitializeComponent()
         {
             this.btnShowBaverages = new System.Windows.Forms.Button();
+            this.btnAddNewBeverage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnShowBaverages
             // 
-            this.btnShowBaverages.Location = new System.Drawing.Point(12, 249);
+            this.btnShowBaverages.Location = new System.Drawing.Point(16, 306);
+            this.btnShowBaverages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowBaverages.Name = "btnShowBaverages";
-            this.btnShowBaverages.Size = new System.Drawing.Size(900, 153);
+            this.btnShowBaverages.Size = new System.Drawing.Size(1200, 188);
             this.btnShowBaverages.TabIndex = 3;
             this.btnShowBaverages.Text = "Show beverages";
             this.btnShowBaverages.UseVisualStyleBackColor = true;
             this.btnShowBaverages.Click += new System.EventHandler(this.btnShowBaverages_Click);
             // 
+            // btnAddNewBeverage
+            // 
+            this.btnAddNewBeverage.Location = new System.Drawing.Point(16, 233);
+            this.btnAddNewBeverage.Name = "btnAddNewBeverage";
+            this.btnAddNewBeverage.Size = new System.Drawing.Size(316, 23);
+            this.btnAddNewBeverage.TabIndex = 4;
+            this.btnAddNewBeverage.Text = "Add new beverage";
+            this.btnAddNewBeverage.UseVisualStyleBackColor = true;
+            this.btnAddNewBeverage.Click += new System.EventHandler(this.btnAddNewBeverage_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(924, 638);
+            this.ClientSize = new System.Drawing.Size(1232, 785);
+            this.Controls.Add(this.btnAddNewBeverage);
             this.Controls.Add(this.btnShowBaverages);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -66,6 +80,7 @@ namespace BigBucksCoffee
         #endregion
        
         private System.Windows.Forms.Button btnShowBaverages;
+        private System.Windows.Forms.Button btnAddNewBeverage;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BigBucksCoffee
 {
-    internal class Beer : Beverage
+    public abstract class Beer : Beverage
     {
         public int AlcoholPercentage { get; set; }
         public bool IsTrapist { get; set; }

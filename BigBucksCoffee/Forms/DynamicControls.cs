@@ -16,7 +16,7 @@ namespace BigBucksCoffee
         {
             //compositie: dit object heeft die klasse nodig, instanties gemaakt
             InitializeComponent();
-            beverageRepo = new BeverageRepo();
+            beverageRepo = BeverageRepo.GetSingletonRepo();
             _cart = Cart.GetCart();
 
             //beverages ophalen en controls genereren

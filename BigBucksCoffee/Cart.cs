@@ -19,7 +19,7 @@ namespace BigBucksCoffee
 
         private Cart()
         {
-            _repo = new BeverageRepo();
+            _repo = BeverageRepo.GetSingletonRepo();
             ItemsInCart = new List<ItemInCart>();
         }
 
